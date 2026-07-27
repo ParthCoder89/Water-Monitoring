@@ -1,0 +1,491 @@
+/* ================================================================
+   PROBLEM PAGE STYLES — Smart Water Monitoring System
+   Theme: white bg, dark gray text, blue primary, light gray secondary
+================================================================= */
+
+.problem-page {
+  font-family: 'Poppins', sans-serif;
+  color: #222222;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  margin-top: 12px;
+}
+
+.problem-page * {
+  box-sizing: border-box;
+}
+
+.problem-page img {
+  max-width: 100%;
+  display: block;
+  border-radius: 16px;
+  border: 1px solid black;
+}
+
+/* ---------------------------------------------------------------
+   Shared utilities
+---------------------------------------------------------------- */
+.eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #2563eb;
+  background: #eef6ff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+.eyebrow.center {
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.problem-page h1,
+.problem-page h2,
+.problem-page h3,
+.problem-page h4 {
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0 0 16px 0;
+  color: #1a1a1a;
+}
+
+.problem-page h1 {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+}
+
+.problem-page h2 {
+  font-size: clamp(26px, 4vw, 34px);
+}
+
+.problem-page p {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #4b4b4b;
+  margin: 0 0 20px 0;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: #2563eb;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 14px 32px;
+  border-radius: 10px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.32);
+}
+
+/* ---------------------------------------------------------------
+   HERO SECTION
+---------------------------------------------------------------- */
+.hero {
+  padding: 80px 6% 60px;
+  background-color: #ffffff;
+}
+
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-text .hero-sub {
+  font-size: 17px;
+  max-width: 480px;
+}
+
+.hero-image img {
+  width: 100%;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+  animation: floatIn 1s ease;
+}
+
+@keyframes floatIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------------------------------------------------------------
+   SPLIT SECTIONS (text + image, alternating)
+---------------------------------------------------------------- */
+.split {
+  padding: 70px 6%;
+}
+
+.split-inner1 {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
+}
+
+.split-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.problem-top{
+  max-width: 1200px;
+  display: flex;
+  gap: 10%;
+}
+.split-text, .split-image{
+  width: 45%;
+}
+
+.split.reverse .split-inner {
+  grid-template-columns: 1fr 1fr;
+}
+
+.split .split-image img {
+  width: 100%;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.07);
+  transition: transform 0.4s ease;
+}
+
+.split .split-image img:hover {
+  transform: translateY(-4px);
+}
+
+/* Icon cards — Section 1 */
+.icon-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.icon-card {
+  background-color: #ebf0f6;
+  border-radius: 14px;
+  padding: 22px 16px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.icon-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.07);
+  background-color: #ffffff;
+}
+
+.icon-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin: 0 auto 12px;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.15);
+}
+
+.icon-card h4 {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.icon-card p {
+  font-size: 13px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Checklist — Section 2 */
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  color: #333333;
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+.tick {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Feature grid — Section 3 */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.feature-box {
+  background-color: #ffffff;
+  border: 1px solid #eef0f3;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.feature-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 28px rgba(37, 99, 235, 0.1);
+  border-color: #2563eb33;
+}
+
+.feature-icon {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.feature-box h4 {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.feature-box p {
+  font-size: 13px;
+  margin: 0;
+}
+
+/* ---------------------------------------------------------------
+   SECTION 4 — REAL IMPACT (full width band)
+---------------------------------------------------------------- */
+.impact {
+  background-color: #eef6ff;
+  padding: 80px 6%;
+  text-align: center;
+}
+
+.impact-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.stats-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.stat-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 34px 16px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 18px 34px rgba(37, 99, 235, 0.15);
+}
+
+.stat-card h3 {
+  font-size: 34px;
+  color: #2563eb;
+  margin-bottom: 8px;
+}
+
+.stat-card p {
+  font-size: 14px;
+  margin: 0;
+  color: #4b4b4b;
+}
+
+/* ---------------------------------------------------------------
+   SECTION 5 — WHO FACES THIS PROBLEM
+---------------------------------------------------------------- */
+.who-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 26px;
+}
+
+.who-card {
+  background-color: #f5f7fa;
+  border-radius: 14px;
+  padding: 20px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.who-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+  background-color: #ffffff;
+}
+
+.who-icon {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.who-card h4 {
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.who-card p {
+  font-size: 13px;
+  margin: 0;
+}
+
+/* ---------------------------------------------------------------
+   SECTION 7 — TIMELINE
+---------------------------------------------------------------- */
+.timeline-section {
+  padding: 80px 6%;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.timeline-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.timeline {
+  margin-top: 50px;
+  position: relative;
+  padding-left: 30px;
+  text-align: left;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 9px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background-color: #d9e6fb;
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 36px;
+  padding-left: 30px;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -30px;
+  top: 4px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #2563eb;
+  box-shadow: 0 0 0 4px #eef6ff;
+}
+
+.timeline-content h4 {
+  font-size: 17px;
+  margin-bottom: 6px;
+}
+
+.timeline-content p {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* ================================================================
+   RESPONSIVE
+================================================================= */
+@media (max-width: 991px) {
+  .hero-inner,
+  .split-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .split.reverse .split-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .split.reverse .split-image {
+    order: -1;
+  }
+
+  .hero-image {
+    order: -1;
+  }
+
+  .icon-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .who-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero,
+  .split,
+  .impact,
+  .timeline-section {
+    padding: 50px 6%;
+  }
+
+  .icon-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-primary {
+    width: 100%;
+    text-align: center;
+  }
+}

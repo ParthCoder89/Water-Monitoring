@@ -1,0 +1,495 @@
+<!-- ================================================================
+     PROBLEM PAGE — Smart Water Monitoring System
+     Note: This file starts directly below your existing navbar and
+     ends directly above your existing footer. No navbar/footer here.
+================================================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>NeerPilot | Smart Water &amp; Home Control</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="problem.css">
+  <link rel="stylesheet" href="style2.css">
+
+</head>
+
+
+<body>
+
+
+  <div class="ocean-bg" aria-hidden="true">
+    <div class="glow glow-a"></div>
+    <div class="glow glow-b"></div>
+    <div class="bubbles" id="bubbleField"></div>
+    <canvas id="particleCanvas"></canvas>
+  </div>
+
+  <header>
+
+    <div class="navbar">
+
+      <div class="top">
+        <div class="nav-left">
+          <div class="logo-mark">
+            <svg viewBox="0 0 48 48" class="logo-svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="logoGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#00E5FF" />
+                  <stop offset="100%" stop-color="#00BFFF" />
+                </linearGradient>
+              </defs>
+              <path d="M24 4C24 4 10 20 10 30a14 14 0 0 0 28 0C38 20 24 4 24 4Z" fill="url(#logoGrad)" />
+              <path d="M24 12C24 12 15 23 15 30a9 9 0 0 0 18 0c0-7-9-18-9-18Z" fill="#07131F" opacity="0.35" />
+            </svg>
+          </div>
+          <div class="brand-text">
+            <h1>NeerPilot</h1>
+            <!-- <span>Autonomous Water &amp; Power Intelligence</span> -->
+          </div>
+        </div>
+
+        <div class="middle">
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dashboard"><a href="dashboard.html"><span class="dashboard">Dashboard</span></a></li>
+            <li><a href="#">Add Device</a></li>
+            <li><a href="#"><span>About </span><span>Device</span></a></li>
+          </ul>
+        </div>
+
+
+        <!-- ME -->
+
+        <div class="right">
+
+          <div class="right-left">
+
+            <div class="user-data">
+              <div class="user-icon">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div class="user-name">
+                <span>Yash Sharma</span>
+              </div>
+            </div>
+
+            <div class="btn-signin entry">
+              Signin
+            </div>
+
+            <div class="btn-login">
+              Login
+            </div>
+
+            <div class="btn-qr-signin ">
+              <div class="qr-icon">
+                <i class="fa-solid fa-qrcode"></i>
+                <p>Scan</p>
+              </div>
+            </div>
+
+            <div class="logo-mark second-logo-mark">
+              <svg viewBox="0 0 48 48" class="logo-svg" aria-hidden="true">
+                <defs>
+                  <linearGradient id="logoGrad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#00E5FF" />
+                    <stop offset="100%" stop-color="#00BFFF" />
+                  </linearGradient>
+                </defs>
+                <path d="M24 4C24 4 10 20 10 30a14 14 0 0 0 28 0C38 20 24 4 24 4Z" fill="url(#logoGrad)" />
+                <path d="M24 12C24 12 15 23 15 30a9 9 0 0 0 18 0c0-7-9-18-9-18Z" fill="#07131F" opacity="0.35" />
+              </svg>
+            </div>
+
+          </div>
+
+
+
+          <div class="menu-btn">&#9776;</div>
+
+        </div>
+      </div>
+
+      <!-- Me -->
+
+    </div>
+
+    <div class="bottom">
+
+      <!-- <div class="nav-right"> -->
+      <div class="nav-stat stat1">
+        <i class="fa-regular fa-clock"></i>
+        <span id="liveTime">--:--:--</span>
+      </div>
+      <div class="nav-stat">
+        <i class="fa-regular fa-calendar"></i>
+        <span id="liveDate">-- --- ----</span>
+      </div>
+      <div class="nav-stat connection-pill" id="connectionPill">
+        <span class="pulse-dot" id="connDot"></span>
+        <span id="connText">Connecting…</span>
+      </div>
+      <!-- </div> -->
+
+
+    </div>
+  </header>
+
+  <main class="problem-page">
+
+    <!-- =========================================================
+       HERO SECTION
+  ========================================================== -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <span class="eyebrow">The Problem</span>
+          <h1>The Water Crisis Starts at Home</h1>
+          <p class="hero-sub">
+            Most homes waste water every single day because there is no way to monitor
+            tanks, pumps and water levels in real time — leading to silent overflow,
+            dry taps and wasted electricity.
+          </p>
+          <a href="#invisible-loss" class="btn-primary">Learn More</a>
+        </div>
+        <div class="hero-image">
+          <img src="images/problem1.jpg" alt="Overflowing water tank on a rooftop" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+       SECTION 1 — INVISIBLE WATER LOSS
+  ========================================================== -->
+    <section class="split" id="invisible-loss">
+      <div class="split-inner1">
+        <div class="top">
+
+          <div class="split-text">
+            <span class="eyebrow">01 · The Hidden Cost</span>
+            <h2>Invisible Water Loss</h2>
+            <p>
+              Every day, thousands of liters overflow silently from rooftop tanks because
+              no one is watching the level in real time. Pumps are switched on and forgotten,
+              running for hours after the tank is already full — wasting both water and
+              electricity. Without a monitoring system, this loss stays invisible: no alert
+              tells you the tank overflowed at 3 AM, no reading tells you the motor ran for
+              six extra hours. Over a month, this hidden waste adds up to money down the
+              drain — literally — while the water crisis outside your home grows worse.
+              The problem isn't a lack of water; it's a lack of visibility.
+            </p>
+
+          </div>
+          <div class="split-image">
+            <img src="images/problem2.jpg" alt="Illustration of water and electricity wastage" loading="lazy">
+          </div>
+
+        </div>
+
+        <div class="problem-bottom">
+
+          <div class="icon-cards">
+            <div class="icon-card">
+              <div class="icon-circle">💧</div>
+              <h4>Water Drop</h4>
+              <p>Tanks overflow unnoticed, wasting hundreds of liters daily.</p>
+            </div>
+            <div class="icon-card">
+              <div class="icon-circle">⚡</div>
+              <h4>Electricity</h4>
+              <p>Pumps keep running long after tanks are full.</p>
+            </div>
+            <div class="icon-card">
+              <div class="icon-circle">🔧</div>
+              <h4>Pump</h4>
+              <p>Motors are left ON due to human forgetfulness.</p>
+            </div>
+            <div class="icon-card">
+              <div class="icon-circle">🔔</div>
+              <h4>Alert</h4>
+              <p>No notification ever reaches you when it matters.</p>
+            </div>
+          </div>
+          
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================
+       SECTION 2 — DAILY CHALLENGES (image left, text right)
+  ========================================================== -->
+    <section class="split reverse">
+      <div class="split-inner">
+        <div class="split-image">
+          <img src="images/problem3.jpg" alt="Person checking water tank manually" loading="lazy">
+        </div>
+        <div class="split-text">
+          <span class="eyebrow">02 · Everyday Struggles</span>
+          <h2>Daily Challenges</h2>
+          <p>
+            Homeowners are often away — at work, traveling, or simply asleep — with no
+            way to know how much water is left or whether the tank is about to overflow.
+            Manual checking means climbing to the rooftop just to peek inside a tank,
+            again and again. At night, overflow goes unnoticed until morning. During the
+            day, a sudden shortage means no warning before the taps run dry. And more
+            often than not, someone forgets to switch off the motor — or forgets to
+            switch it on when the tank runs empty.
+          </p>
+          <ul class="checklist">
+            <li><span class="tick">✔</span> People are away from home for long hours</li>
+            <li><span class="tick">✔</span> No way to monitor water level remotely</li>
+            <li><span class="tick">✔</span> Manual rooftop checking is tiring and unsafe</li>
+            <li><span class="tick">✔</span> Overflow often happens at night, unnoticed</li>
+            <li><span class="tick">✔</span> Sudden water shortage catches everyone off guard</li>
+            <li><span class="tick">✔</span> Motor operation is frequently missed or forgotten</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+       SECTION 3 — WHY TRADITIONAL SYSTEMS FAIL
+  ========================================================== -->
+    <section class="split">
+      <div class="split-inner">
+        <div class="split-text">
+          <span class="eyebrow">03 · Old Technology</span>
+          <h2>Why Traditional Systems Fail</h2>
+          <p>
+            Float switches, manual dipsticks and physical inspections were never built
+            for the way people actually live today. They fail quietly, offer no remote
+            access, and leave homeowners guessing.
+          </p>
+
+          <div class="feature-grid">
+            <div class="feature-box">
+              <div class="feature-icon">🌊</div>
+              <h4>Float Switches Fail</h4>
+              <p>Mechanical floats jam, corrode or stop working over time.</p>
+            </div>
+            <div class="feature-box">
+              <div class="feature-icon">🪜</div>
+              <h4>Manual Inspection</h4>
+              <p>Requires physically climbing up to check tank levels.</p>
+            </div>
+            <div class="feature-box">
+              <div class="feature-icon">📡</div>
+              <h4>No Remote Monitoring</h4>
+              <p>Impossible to check water status from outside the home.</p>
+            </div>
+            <div class="feature-box">
+              <div class="feature-icon">🔕</div>
+              <h4>No Notifications</h4>
+              <p>No alerts for overflow, shortage, or pump failure.</p>
+            </div>
+            <div class="feature-box">
+              <div class="feature-icon">🔋</div>
+              <h4>No Battery Backup</h4>
+              <p>Systems stop working completely during power cuts.</p>
+            </div>
+            <div class="feature-box">
+              <div class="feature-icon">☁️</div>
+              <h4>No Cloud Storage</h4>
+              <p>No historical data to track usage or spot patterns.</p>
+            </div>
+          </div>
+        </div>
+        <div class="split-image">
+          <img src="images/problem4.jpg" alt="Old float switch water level indicator" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+       SECTION 4 — REAL IMPACT (full width, light blue bg)
+  ========================================================== -->
+    <section class="impact">
+      <div class="impact-inner">
+        <span class="eyebrow center">04 · The Numbers</span>
+        <h2>Real Impact</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <h3>30%</h3>
+            <p>Water Wasted</p>
+          </div>
+          <div class="stat-card">
+            <h3>50+</h3>
+            <p>Hours Lost</p>
+          </div>
+          <div class="stat-card">
+            <h3>24x7</h3>
+            <p>Monitoring Needed</p>
+          </div>
+          <div class="stat-card">
+            <h3>100%</h3>
+            <p>Manual Dependence</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+       SECTION 5 — WHO FACES THIS PROBLEM (image left, text right)
+  ========================================================== -->
+    <section class="split reverse">
+      <div class="split-inner">
+        <div class="split-image">
+          <img src="images/problem5.jpg" alt="Different buildings facing water monitoring problems" loading="lazy">
+        </div>
+        <div class="split-text">
+          <span class="eyebrow">05 · Affected Groups</span>
+          <h2>Who Faces This Problem?</h2>
+          <p>This isn't limited to one type of home — it affects nearly every kind of property that relies on stored
+            water.</p>
+
+          <div class="who-grid">
+            <div class="who-card">
+              <div class="who-icon">🏠</div>
+              <h4>Home Owners</h4>
+              <p>Struggle with overflow and shortage without any warning.</p>
+            </div>
+            <div class="who-card">
+              <div class="who-icon">🏢</div>
+              <h4>Apartments</h4>
+              <p>Shared tanks make manual monitoring even harder.</p>
+            </div>
+            <div class="who-card">
+              <div class="who-icon">🌾</div>
+              <h4>Farm Houses</h4>
+              <p>Remote locations mean checks are rare and unreliable.</p>
+            </div>
+            <div class="who-card">
+              <div class="who-icon">🏫</div>
+              <h4>Schools</h4>
+              <p>Large tanks need constant supervision that staff can't provide.</p>
+            </div>
+            <div class="who-card">
+              <div class="who-icon">🏭</div>
+              <h4>Factories</h4>
+              <p>Production depends on water supply that must never run dry.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+       SECTION 6 — OUR MOTIVATION (text left, image right)
+  ========================================================== -->
+    <section class="split">
+      <div class="split-inner">
+        <div class="split-text">
+          <span class="eyebrow">06 · Why We Built This</span>
+          <h2>Our Motivation</h2>
+          <p>
+            This project began with a simple, frustrating experience: watching water
+            overflow from a rooftop tank while the pump kept running unnoticed. It
+            wasn't a one-time mistake — it was a recurring problem faced by nearly every
+            household we spoke to. People wanted a simple way to know their tank's water
+            level without climbing stairs, without guessing, and without wasting
+            electricity on a forgotten motor. We realized that water scarcity isn't
+            always about the lack of water — it's often about the lack of awareness.
+            That's why we set out to build a Smart Water Monitoring System: to give
+            every home, apartment, farm, school and factory real-time visibility and
+            control over their water, so that not a single drop goes to waste again.
+          </p>
+        </div>
+        <div class="split-image">
+          <img src="images/problem6.jpg" alt="Team discussing smart water monitoring solution" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+       SECTION 7 — TIMELINE
+  ========================================================== -->
+    <section class="timeline-section">
+      <div class="timeline-inner">
+        <span class="eyebrow center">07 · The Journey</span>
+        <h2>From Problem to Solution</h2>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4>Identifying the Problem</h4>
+              <p>Observed repeated tank overflow and pump wastage in daily life.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4>Talking to Real Users</h4>
+              <p>Spoke with homeowners, apartment residents and farm owners about the issue.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4>Researching Existing Systems</h4>
+              <p>Studied float switches and manual methods — and found their limits.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4>Designing the Solution</h4>
+              <p>Planned a real-time, remote, notification-driven monitoring system.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4>Building Smart Water Monitoring</h4>
+              <p>Turned the idea into a working system to end invisible water loss.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="bottom-nav">
+
+      <div class="nav-item">
+        <i class="fa-solid fa-house"></i>
+        <span><a href="index.html">Home</a></span>
+      </div>
+
+      <div class="nav-item">
+        <i class="fa-solid fa-table-columns"></i>
+        <span><a href="dashboard.html">Dashboard</a></span>
+      </div>
+
+      <div class="nav-item">
+        <i class="fa-solid fa-circle-plus"></i>
+        <span>Add Device</span>
+      </div>
+
+      <div class="nav-item">
+        <i class="fa-solid fa-circle-info"></i>
+        <span>About Us</span>
+      </div>
+
+      <div class="nav-item">
+        <i class="fa-solid fa-address-book"></i>
+        <span>Contact</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="script2.js"></script>
+</body>
+
+</html>

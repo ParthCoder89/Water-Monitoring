@@ -1,0 +1,569 @@
+/* ================================================================
+   SOLUTION PAGE STYLES — NeerPilot Smart Water Monitoring System
+   Theme matches problem.css: white bg, dark gray text, blue primary,
+   light gray secondary, soft-shadow cards, Poppins font.
+================================================================= */
+
+.solution-page {
+  font-family: 'Poppins', sans-serif;
+  color: #222222;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+.solution-page * {
+  box-sizing: border-box;
+}
+
+.solution-page img {
+  max-width: 100%;
+  display: block;
+  border-radius: 16px;
+  border: 1px solid black;
+}
+
+/* ---------------------------------------------------------------
+   Shared utilities
+---------------------------------------------------------------- */
+.eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #2563eb;
+  background: #eef6ff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+.eyebrow.center {
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.solution-page h1,
+.solution-page h2,
+.solution-page h3,
+.solution-page h4 {
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0 0 16px 0;
+  color: #1a1a1a;
+}
+
+.solution-page h1 {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+}
+
+.solution-page h2 {
+  font-size: clamp(26px, 4vw, 34px);
+}
+
+.solution-page p {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #4b4b4b;
+  margin: 0 0 20px 0;
+}
+
+.section-sub {
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* Buttons */
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 14px 32px;
+  border-radius: 10px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+}
+
+.btn-primary {
+  background-color: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.32);
+}
+
+.btn-secondary {
+  background-color: #ffffff;
+  color: #2563eb;
+  border: 2px solid #2563eb;
+}
+
+.btn-secondary:hover {
+  background-color: #2563eb;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.2);
+}
+
+.hero-actions,
+.cta-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+/* ---------------------------------------------------------------
+   HERO SECTION
+---------------------------------------------------------------- */
+.hero {
+  padding: 80px 6% 60px;
+  background-color: #ffffff;
+}
+
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-text .hero-sub {
+  font-size: 17px;
+  max-width: 500px;
+}
+
+.hero-image img {
+  width: 100%;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+  animation: floatIn 1s ease;
+}
+
+@keyframes floatIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------------------------------------------------------------
+   SPLIT SECTIONS (text + image, alternating)
+---------------------------------------------------------------- */
+.split {
+  padding: 70px 6%;
+}
+
+.split-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.split .split-image img {
+  width: 100%;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.07);
+  transition: transform 0.4s ease;
+}
+
+.split .split-image img:hover {
+  transform: translateY(-4px);
+}
+
+/* Icon cards — Section 1 */
+.icon-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.icon-card {
+  background-color: #f5f7fa;
+  border-radius: 14px;
+  padding: 22px 16px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.icon-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.07);
+  background-color: #ffffff;
+}
+
+.icon-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin: 0 auto 12px;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.15);
+}
+
+.icon-card h4 {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.icon-card p {
+  font-size: 13px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Checklist */
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  color: #333333;
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+.tick {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Feature grid — Sections 3, 6, 9 */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.feature-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.feature-box {
+  background-color: #ffffff;
+  border: 1px solid #eef0f3;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.feature-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 28px rgba(37, 99, 235, 0.1);
+  border-color: #2563eb33;
+}
+
+.feature-icon {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.feature-box h4 {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.feature-box p {
+  font-size: 13px;
+  margin: 0;
+}
+
+/* ---------------------------------------------------------------
+   SECTION 4 — LIVE DASHBOARD (full-width light blue band)
+---------------------------------------------------------------- */
+.dashboard-band {
+  background-color: #eef6ff;
+  padding: 80px 6%;
+}
+
+.dashboard-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.dashboard-card {
+  background-color: #ffffff;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(37, 99, 235, 0.12);
+}
+
+.dashboard-icon {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.dashboard-card h4 {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.dashboard-card p {
+  font-size: 13px;
+  margin: 0;
+}
+
+.dashboard-image img {
+  width: 100%;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* ---------------------------------------------------------------
+   SECTION 7 — ALERT CARDS
+---------------------------------------------------------------- */
+.alert-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.alert-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #f5f7fa;
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333333;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.alert-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+  background-color: #ffffff;
+}
+
+.alert-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+/* ---------------------------------------------------------------
+   SECTION 8 — WHY CHOOSE NEERPILOT
+---------------------------------------------------------------- */
+.why-choose {
+  padding: 80px 6%;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.why-choose-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 40px;
+  text-align: left;
+}
+
+.why-card {
+  background-color: #f5f7fa;
+  border-radius: 16px;
+  padding: 28px 22px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.06);
+  background-color: #ffffff;
+}
+
+.why-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 14px;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.15);
+}
+
+.why-card h4 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.why-card p {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* ---------------------------------------------------------------
+   FINAL CTA
+---------------------------------------------------------------- */
+.final-cta {
+  background-color: #2563eb;
+  padding: 90px 6%;
+  text-align: center;
+}
+
+.final-cta-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.final-cta h2 {
+  color: #ffffff;
+}
+
+.final-cta p {
+  color: #eaf1ff;
+  margin-bottom: 30px;
+}
+
+.final-cta .cta-actions {
+  justify-content: center;
+}
+
+.final-cta .btn-primary {
+  background-color: #ffffff;
+  color: #2563eb;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.final-cta .btn-primary:hover {
+  background-color: #f5f7fa;
+  color: #1d4ed8;
+}
+
+.final-cta .btn-secondary {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+.final-cta .btn-secondary:hover {
+  background-color: #ffffff;
+  color: #2563eb;
+}
+
+/* ================================================================
+   RESPONSIVE
+================================================================= */
+@media (max-width: 991px) {
+  .hero-inner,
+  .split-inner,
+  .dashboard-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .split.reverse .split-image {
+    order: -1;
+  }
+
+  .hero-image,
+  .dashboard-image {
+    order: -1;
+  }
+
+  .icon-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .feature-grid,
+  .feature-grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .alert-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero,
+  .split,
+  .dashboard-band,
+  .why-choose,
+  .final-cta {
+    padding: 50px 6%;
+  }
+
+  .icon-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions,
+  .cta-actions {
+    flex-direction: column;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+}
