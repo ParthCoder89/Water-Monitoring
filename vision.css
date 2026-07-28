@@ -51,6 +51,7 @@
   font-weight: 600;
   line-height: 1.25;
   margin: 0 0 16px 0;
+  text-align: center;
   color: #1a1a1a;
 }
 
@@ -165,13 +166,16 @@
    SECTION 1 — OUR PURPOSE
 ---------------------------------------------------------------- */
 .purpose {
-  padding: 80px 6%;
+  padding: 80px 2%;
   text-align: center;
 }
 
 .purpose-inner {
   max-width: 1100px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .icon-cards {
@@ -543,4 +547,4 @@
     width: 100%;
     text-align: center;
   }
-}
+}   
