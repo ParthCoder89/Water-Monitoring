@@ -44,7 +44,7 @@ html {
 
 body {
     font-family: var(--font-body);
-    background: var(--c-bg);
+    background: #212121;
     color: var(--text-primary);
     min-height: 100vh;
     overflow-x: hidden;
@@ -334,6 +334,18 @@ header {
     }
 }
 
+.complete-page{
+    width: 100%;
+    display: flex;
+}
+.page-left{
+    width: 24%;
+}
+.page-left{
+    width: 76%;
+}
+
+
 
 .hero {
 
@@ -577,7 +589,8 @@ header {
     flex-direction: column;
     justify-content: center;
     /* background: rgb(255, 255, 255); */
-    background: var(--c-bg);
+    /* background: var(--c-bg);*/
+    background: #212121;
 }
 
 .details-section>div {
@@ -599,12 +612,14 @@ header {
 .detail-sec-top h2 {
     font-size: 2.6rem;
     margin-top: 40px;
+    color: #ECECEC; 
 }
 
 .detail-sec-top p {
     font-size: 1.2rem;
     padding: 0px 350px;
     text-align: center;
+    color: #A0A0A0;
 }
 
 .detail-sec-bottom {
@@ -638,8 +653,9 @@ header {
     align-items: center;
     gap: 20px;
 
-    background: #3b4652;
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    /* background: #3b4652; */
+    background: #2A2A2A;
+    border: 1px solid #3A3A3A;
     border-radius: 20px;
 
     transition: all .35s ease;
@@ -656,7 +672,7 @@ header {
     width: 70%;
     height: 35px;
 
-    background: rgba(0, 191, 255, .7);
+    background: rgba(131, 169, 181, 0.8);
     filter: blur(25px);
 
     opacity: 0;
@@ -671,11 +687,11 @@ header {
             #0d5f8f,
             #083d63);
 
-    border-color: rgba(0, 191, 255, .6);
+    border-color: rgba(131, 169, 181, 0.8);
 
     box-shadow:
-        0 15px 35px rgba(0, 0, 0, .35),
-        0 0 25px rgba(0, 191, 255, .35);
+        0 15px 35px rgba(0, 0, 0, .25),
+        0 0 25px rgba(0, 191, 255, .25);
 }
 
 /* Show Bottom Glow */
@@ -687,13 +703,16 @@ header {
 .detail-div h3 {
     margin: 20px 0px;
     padding: 5px 10px;
-    background: rgb(81, 13, 165);
+    font-size: 1.3rem;
+    /* background: rgb(81, 13, 165); */
     border-radius: 20px;
+    color: #ECECEC;
 }
 
 .detail-div h5 {
     text-align: center;
     padding: 0px 10px;
+    color: #A0A0A0;
 }
 
 .detail-div p {
@@ -706,9 +725,10 @@ header {
     margin-top: auto;
     margin-bottom: 20px;
     font-weight: 700;
+    color: #4EA1FF;
     font-size: 1rem;
     padding: 3px 7px;
-    background-color: rgb(18, 100, 194);
+    /* background-color: rgb(18, 100, 194); */
     text-decoration: none;
     border-radius: 20px;
 }

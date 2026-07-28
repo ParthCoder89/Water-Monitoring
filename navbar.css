@@ -43,7 +43,7 @@ html {
 
 body {
     font-family: var(--font-body);
-    background: var(--c-bg);
+    background: #212121;
     color: var(--text-primary);
     min-height: 100vh;
     overflow-x: hidden;
@@ -330,4 +330,37 @@ header {
         opacity: 0.5;
         transform: scale(0.8);
     }
+}
+
+
+
+.complete-page{
+    width: 100%;
+    display: flex;
+}
+.page-left{
+    width: 24%;
+}
+.page-left{
+    width: 76%;
+}
+
+
+
+.bottom-nav{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.bottom-nav ul{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.bottom-nav ul li{
+    background-color: ;
 }
