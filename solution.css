@@ -4,11 +4,32 @@
    light gray secondary, soft-shadow cards, Poppins font.
 ================================================================= */
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  font-family: var(--font-body);
+  background: #212121;
+  color: #ECECEC;
+  height: 100vh;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 .solution-page {
   font-family: 'Poppins', sans-serif;
-  color: #222222;
-  background-color: #ffffff;
+  color: #ECECEC;
   overflow-x: hidden;
+  margin-top: 12px;
 }
 
 .solution-page * {
@@ -27,12 +48,11 @@
 ---------------------------------------------------------------- */
 .eyebrow {
   display: inline-block;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #2563eb;
-  background: #eef6ff;
   padding: 6px 14px;
   border-radius: 20px;
   margin-bottom: 16px;
@@ -52,7 +72,6 @@
   font-weight: 600;
   line-height: 1.25;
   margin: 0 0 16px 0;
-  color: #1a1a1a;
 }
 
 .solution-page h1 {
@@ -67,7 +86,6 @@
 .solution-page p {
   font-size: 16px;
   line-height: 1.75;
-  color: #4b4b4b;
   margin: 0 0 20px 0;
 }
 
@@ -128,7 +146,6 @@
 ---------------------------------------------------------------- */
 .hero {
   padding: 80px 6% 60px;
-  background-color: #ffffff;
 }
 
 .hero-inner {
@@ -152,15 +169,22 @@
 }
 
 @keyframes floatIn {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ---------------------------------------------------------------
    SPLIT SECTIONS (text + image, alternating)
 ---------------------------------------------------------------- */
 .split {
-  padding: 70px 6%;
+  padding: 40px 6%;
 }
 
 .split-inner {
@@ -187,45 +211,49 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 18px;
-  margin-top: 30px;
+  margin-top: 34px;
+  text-align: center;
 }
 
 .icon-card {
-  background-color: #f5f7fa;
+  background-color: #2A2A2A;
   border-radius: 14px;
-  padding: 22px 16px;
-  text-align: center;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+  padding: 26px 18px;
+  border: 1px solid #eef0f3;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .icon-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.07);
-  background-color: #ffffff;
+  box-shadow: 0 14px 28px rgba(37, 99, 235, 0.1);
+  border-color: #2563eb33;
 }
 
 .icon-circle {
-  width: 50px;
-  height: 50px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
   background-color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
-  margin: 0 auto 12px;
+  font-size: 24px;
+  margin: 0 auto 14px;
   box-shadow: 0 6px 16px rgba(37, 99, 235, 0.15);
 }
 
 .icon-card h4 {
-  font-size: 15px;
+  font-size: 16px;
   margin-bottom: 6px;
+  text-align: center;
 }
 
 .icon-card p {
   font-size: 13px;
   margin: 0;
   line-height: 1.5;
+  color: #A0A0A0;
 }
 
 /* Checklist */
@@ -240,7 +268,7 @@
   align-items: flex-start;
   gap: 12px;
   font-size: 15px;
-  color: #333333;
+  color: #A0A0A0;
   margin-bottom: 14px;
   line-height: 1.5;
 }
@@ -271,10 +299,10 @@
 }
 
 .feature-box {
-  background-color: #ffffff;
-  border: 1px solid #eef0f3;
+  background-color: #2A2A2A;
   border-radius: 14px;
   padding: 22px;
+  border: 1px solid #eef0f3;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
@@ -293,11 +321,13 @@
 .feature-box h4 {
   font-size: 15px;
   margin-bottom: 6px;
+  color: #ECECEC;
 }
 
 .feature-box p {
   font-size: 13px;
   margin: 0;
+  color: #A0A0A0;
 }
 
 /* ---------------------------------------------------------------
@@ -502,6 +532,7 @@
    RESPONSIVE
 ================================================================= */
 @media (max-width: 991px) {
+
   .hero-inner,
   .split-inner,
   .dashboard-inner {
@@ -540,6 +571,7 @@
 }
 
 @media (max-width: 600px) {
+
   .hero,
   .split,
   .dashboard-band,
