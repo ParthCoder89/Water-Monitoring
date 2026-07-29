@@ -4,15 +4,33 @@
    blue primary, light gray secondary, soft-shadow cards, Poppins font.
 ================================================================= */
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-  font-family: var(--font-body);
+  /* font-family: var(--font-body);
   background: #212121;
   color: #ECECEC;
   color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
   min-height: 100vh;
   overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  /* position:relative; */
+  overflow-y: auto; */
+
+  font-family: var(--font-body);
+  background: #212121;
+  color: var(--text-primary);
+  height: 100vh;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .vision-page {
@@ -85,7 +103,7 @@ body {
   font-size: 16px;
   line-height: 1.75;
   /* color: #4b4b4b; */
-  margin: 0 0 20px 0;
+  /* margin: 0 0 20px 0; */
 }
 
 .section-sub {
@@ -207,9 +225,9 @@ body {
 
 .icon-card {
   background-color: #2A2A2A;
-  border: 1px solid #eef0f3;
   border-radius: 14px;
   padding: 26px 18px;
+  border: 1px solid #eef0f3;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
@@ -316,9 +334,9 @@ body {
 
 .feature-box {
   background-color: #2A2A2A;
-  border: 1px solid #eef0f3;
   border-radius: 14px;
   padding: 22px;
+  border: 1px solid #eef0f3;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
@@ -350,7 +368,6 @@ body {
    SECTION 4 — CREATING SMART COMMUNITIES (light blue band)
 ---------------------------------------------------------------- */
 .communities {
-  background-color: #eef6ff;
   padding: 80px 6%;
   text-align: center;
 }
@@ -369,16 +386,18 @@ body {
 }
 
 .community-card {
-  background-color: #ffffff;
+  background-color: #2A2A2A;
   border-radius: 16px;
   padding: 28px 22px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid #eef0f3;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .community-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 14px 28px rgba(37, 99, 235, 0.12);
+  transform: translateY(-5px);
+  box-shadow: 0 14px 28px rgba(37, 99, 235, 0.1);
+  border-color: #2563eb33;
 }
 
 .community-icon {
@@ -401,6 +420,7 @@ body {
 .community-card p {
   font-size: 14px;
   margin: 0;
+  color: #A0A0A0;
 }
 
 /* ---------------------------------------------------------------
@@ -465,7 +485,7 @@ body {
    FINAL CTA
 ---------------------------------------------------------------- */
 .final-cta {
-  background-color: #2563eb;
+  background-color: #2A2A2A;
   padding: 90px 6%;
   text-align: center;
 }
