@@ -4,10 +4,21 @@
    blue primary, light gray secondary, soft-shadow cards, Poppins font.
 ================================================================= */
 
+body {
+  font-family: var(--font-body);
+  background: #212121;
+  color: #ECECEC;
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  /* position:relative; */
+}
+
 .vision-page {
   font-family: 'Poppins', sans-serif;
-  color: #222222;
-  background-color: #ffffff;
+  color: #ECECEC;
+  background-color: #212121;
   overflow-x: hidden;
 }
 
@@ -26,12 +37,12 @@
 ---------------------------------------------------------------- */
 .eyebrow {
   display: inline-block;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #2563eb;
-  background: #eef6ff;
+  /* background: #eef6ff; */
   padding: 6px 14px;
   border-radius: 20px;
   margin-bottom: 16px;
@@ -52,7 +63,7 @@
   line-height: 1.25;
   margin: 0 0 16px 0;
   text-align: center;
-  color: #1a1a1a;
+  /* color: #1a1a1a; */
 }
 
 .vision-page h1 {
@@ -73,7 +84,7 @@
 .vision-page p {
   font-size: 16px;
   line-height: 1.75;
-  color: #4b4b4b;
+  /* color: #4b4b4b; */
   margin: 0 0 20px 0;
 }
 
@@ -97,8 +108,8 @@
 }
 
 .btn-primary {
-  background-color: #2563eb;
-  color: #ffffff;
+  /* background-color: #2563eb; */
+  /* color: #ffffff; */
   box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
 }
 
@@ -109,7 +120,7 @@
 }
 
 .btn-secondary {
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   color: #2563eb;
   border: 2px solid #2563eb;
 }
@@ -133,8 +144,9 @@
    HERO SECTION
 ---------------------------------------------------------------- */
 .hero {
+  margin-top: 10px;
   padding: 80px 6% 60px;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
 }
 
 .hero-inner {
@@ -158,8 +170,15 @@
 }
 
 @keyframes floatIn {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ---------------------------------------------------------------
@@ -187,16 +206,18 @@
 }
 
 .icon-card {
-  background-color: #f5f7fa;
+  background-color: #2A2A2A;
+  border: 1px solid #eef0f3;
   border-radius: 14px;
   padding: 26px 18px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .icon-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.07);
-  background-color: #ffffff;
+  box-shadow: 0 14px 28px rgba(37, 99, 235, 0.1);
+  border-color: #2563eb33;
 }
 
 .icon-circle {
@@ -222,13 +243,14 @@
   font-size: 13px;
   margin: 0;
   line-height: 1.5;
+  color: #A0A0A0;
 }
 
 /* ---------------------------------------------------------------
    SPLIT SECTIONS (text + image, alternating)
 ---------------------------------------------------------------- */
 .split {
-  padding: 70px 6%;
+  padding: 40px 6%;
 }
 
 .split-inner {
@@ -262,7 +284,7 @@
   align-items: flex-start;
   gap: 12px;
   font-size: 15px;
-  color: #333333;
+  color: #A0A0A0;
   margin-bottom: 14px;
   line-height: 1.5;
 }
@@ -293,7 +315,7 @@
 }
 
 .feature-box {
-  background-color: #ffffff;
+  background-color: #2A2A2A;
   border: 1px solid #eef0f3;
   border-radius: 14px;
   padding: 22px;
@@ -315,11 +337,13 @@
 .feature-box h4 {
   font-size: 15px;
   margin-bottom: 6px;
+  color: #ECECEC;
 }
 
 .feature-box p {
   font-size: 13px;
   margin: 0;
+  color: #A0A0A0;
 }
 
 /* ---------------------------------------------------------------
@@ -490,6 +514,7 @@
    RESPONSIVE
 ================================================================= */
 @media (max-width: 991px) {
+
   .hero-inner,
   .split-inner {
     grid-template-columns: 1fr;
@@ -519,6 +544,7 @@
 }
 
 @media (max-width: 600px) {
+
   .hero,
   .split,
   .purpose,
@@ -547,4 +573,4 @@
     width: 100%;
     text-align: center;
   }
-}   
+}
