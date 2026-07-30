@@ -1,0 +1,458 @@
+/* ==========================
+   ADD DEVICE
+==========================*/
+
+.add-device-page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 40px;
+    background: #212121;
+    color: #ECECEC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Heading */
+
+.page-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.page-title h1 {
+    font-size: 2.8rem;
+    margin-bottom: 16px;
+}
+
+.page-title p {
+    color: #A0A0A0;
+    max-width: 650px;
+    line-height: 1.7;
+}
+
+/* ==========================
+Stepper
+==========================*/
+
+.stepper {
+    width: 100%;
+    max-width: 950px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.circle {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid #555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.step.active .circle {
+    background: #0ea5e9;
+    border-color: #0ea5e9;
+}
+
+.step span {
+    font-size: .9rem;
+    color: #bdbdbd;
+}
+
+.step.active span {
+    color: #ECECEC;
+}
+
+.step-line {
+    width: 90px;
+    height: 2px;
+    background: #555;
+    margin: 0 10px;
+}
+
+/* ==========================
+Card
+==========================*/
+
+.setup-card {
+    width: 100%;
+    max-width: 700px;
+    background: #2A2A2A;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, .08);
+    padding: 45px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .35);
+}
+
+.setup-step {
+    display: none;
+}
+
+.setup-step.active {
+    display: block;
+}
+
+.step-icon {
+    width: 75px;
+    height: 75px;
+    margin: auto;
+    border-radius: 50%;
+    background: #0ea5e9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.setup-step h2 {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.setup-step>p {
+    text-align: center;
+    color: #A0A0A0;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* ==========================
+Inputs
+==========================*/
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 22px;
+}
+
+.input-group label {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 15px;
+    background: #1d1d1d;
+    border: 1px solid #444;
+    border-radius: 10px;
+    color: #ECECEC;
+    outline: none;
+    transition: .3s;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #0ea5e9;
+}
+
+textarea {
+    resize: none;
+}
+
+.double-input {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.password-box {
+    display: flex;
+}
+
+.password-box input {
+    border-radius: 10px 0 0 10px;
+}
+
+.toggle-password {
+    width: 60px;
+    border: none;
+    background: #0ea5e9;
+    cursor: pointer;
+    border-radius: 0 10px 10px 0;
+}
+
+.toogle-password i {
+    color: #ECECEC;
+}
+
+/* ==========================
+Buttons
+==========================*/
+
+.button-area {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.button-area.between {
+    justify-content: space-between;
+}
+
+.primary-btn,
+.secondary-btn {
+    padding: 14px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.primary-btn {
+    background: #0ea5e9;
+    color: white;
+}
+
+.primary-btn:hover {
+    background: #0284c7;
+}
+
+.secondary-btn {
+    background: #444;
+    color: white;
+}
+
+.secondary-btn:hover {
+    background: #555;
+}
+
+/* ==========================
+Security
+==========================*/
+
+.security-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+/* ==========================
+Success
+==========================*/
+
+.success-animation {
+    font-size: 85px;
+    color: #22c55e;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+#step5 {
+    text-align: center;
+}
+
+#step5 .primary-btn {
+    margin-top: 25px;
+}
+
+/* ==========================
+Responsive
+==========================*/
+
+@media(max-width:768px) {
+
+    .add-device-page {
+        padding: 20px;
+    }
+
+    .setup-card {
+        padding: 25px;
+    }
+
+    .step-line {
+        width: 40px;
+    }
+
+    .step span {
+        font-size: .75rem;
+    }
+
+    .double-input {
+        grid-template-columns: 1fr;
+    }
+
+    .button-area.between {
+        flex-direction: column;
+    }
+
+}
+
+/* ==========================
+   Input Placeholder
+==========================*/
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+    color: #8d8d8d;
+}
+
+/* ==========================
+   Hover Effects
+==========================*/
+
+.setup-card:hover {
+    box-shadow: 0 18px 40px rgba(0, 0, 0, .45);
+}
+
+.primary-btn:active,
+.secondary-btn:active {
+    transform: scale(.98);
+}
+
+/* ==========================
+   Input Icons (Future)
+==========================*/
+
+.input-group i {
+    /* color: #0ea5e9; */
+}
+
+/* ==========================
+   Password Button
+==========================*/
+
+.toggle-password {
+    transition: .3s;
+}
+
+.toggle-password:hover {
+    background: #0284c7;
+}
+
+/* ==========================
+   Success Animation
+==========================*/
+
+.success-animation i {
+    animation: pop .7s ease;
+}
+
+@keyframes pop {
+
+    0% {
+        transform: scale(0);
+    }
+
+    60% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+/* ==========================
+   Fade Animation
+==========================*/
+
+.setup-step.active {
+    animation: fade .35s ease;
+}
+
+@keyframes fade {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* ==========================
+   Progress Animation
+==========================*/
+
+.step.active .circle {
+    box-shadow: 0 0 18px rgba(14, 165, 233, .5);
+}
+
+/* ==========================
+   Disabled Button
+==========================*/
+
+.primary-btn:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+/* ==========================
+   Scrollbar
+==========================*/
+
+.setup-card::-webkit-scrollbar {
+    width: 6px;
+}
+
+.setup-card::-webkit-scrollbar-thumb {
+    background: #0ea5e9;
+    border-radius: 20px;
+}
+
+/* ==========================
+   Mobile
+==========================*/
+
+@media(max-width:600px) {
+
+    .page-title h1 {
+        font-size: 1.9rem;
+    }
+
+    .page-title p {
+        font-size: .9rem;
+    }
+
+    .setup-card {
+        padding: 20px;
+    }
+
+    .circle {
+        width: 35px;
+        height: 35px;
+        font-size: .8rem;
+    }
+
+    .step-line {
+        width: 20px;
+    }
+
+    .button-area,
+    .security-options {
+        flex-direction: column;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        width: 100%;
+    }
+
+}
