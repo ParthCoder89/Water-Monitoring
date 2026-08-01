@@ -1,0 +1,374 @@
+/* =====================================================================
+   NEERPILOT FOOTER STYLES — Premium SaaS Dashboard Style
+   Theme:
+     Background   : #1F1F1F
+     Card Color   : #2A2A2A
+     Primary Blue : #2563EB
+     Accent Cyan  : #38BDF8
+     Text White   : #ECECEC
+     Secondary    : #A0A0A0
+====================================================================== */
+
+.np-footer {
+  --bg: #1F1F1F;
+  --card: #2A2A2A;
+  --primary: #2563EB;
+  --accent: #38BDF8;
+  --text: #ECECEC;
+  --text-secondary: #A0A0A0;
+  --border: rgba(255, 255, 255, 0.08);
+  --radius: 18px;
+  --transition: 0.3s ease;
+
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  padding: 70px 5% 30px;
+  position: relative;
+}
+
+.np-footer * {
+  box-sizing: border-box;
+}
+
+.np-footer a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.np-footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------------------------------------------------------------
+   FADE-UP ON LOAD (JS toggles .np-visible)
+---------------------------------------------------------------- */
+.np-fade {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.np-fade.np-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .np-fade {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------------------------------------------------------------
+   TOP GRID
+---------------------------------------------------------------- */
+.np-footer-top {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.1fr;
+  gap: 32px;
+  padding-bottom: 50px;
+}
+
+.np-col {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 26px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.np-col:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(37, 99, 235, 0.18);
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+.np-col-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 20px 0;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.np-col-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 36px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+}
+
+/* ---------------------------------------------------------------
+   COLUMN 1 — LOGO & ABOUT
+---------------------------------------------------------------- */
+.np-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.np-logo-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+}
+
+.np-logo-text {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+
+.np-about-text {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin: 0 0 22px 0;
+}
+
+.np-social {
+  display: flex;
+  gap: 12px;
+}
+
+.np-social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 15px;
+  transition: transform var(--transition), box-shadow var(--transition), color var(--transition), background-color var(--transition);
+}
+
+.np-social-icon:hover {
+  transform: translateY(-4px);
+  color: #ffffff;
+  background-color: var(--primary);
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.55);
+}
+
+/* ---------------------------------------------------------------
+   COLUMN 2 — QUICK LINKS (animated underline)
+---------------------------------------------------------------- */
+.np-link-list li {
+  margin-bottom: 14px;
+}
+
+.np-link {
+  position: relative;
+  font-size: 14px;
+  color: var(--text-secondary);
+  transition: color var(--transition);
+  display: inline-block;
+}
+
+.np-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transition: width var(--transition);
+}
+
+.np-link:hover {
+  color: var(--text);
+}
+
+.np-link:hover::after {
+  width: 100%;
+}
+
+/* ---------------------------------------------------------------
+   COLUMN 3 — OUR FEATURES
+---------------------------------------------------------------- */
+.np-feature-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  transition: color var(--transition), transform var(--transition);
+}
+
+.np-feature-list li:hover {
+  color: var(--text);
+  transform: translateX(4px);
+}
+
+.np-feature-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(56, 189, 248, 0.12);
+  color: var(--accent);
+  font-size: 13px;
+  transition: background-color var(--transition), color var(--transition), box-shadow var(--transition);
+}
+
+.np-feature-list li:hover .np-feature-icon {
+  background-color: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 0 14px rgba(37, 99, 235, 0.5);
+}
+
+/* ---------------------------------------------------------------
+   COLUMN 4 — CONTACT US
+---------------------------------------------------------------- */
+.np-contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.np-contact-list li:last-child {
+  margin-bottom: 0;
+}
+
+.np-contact-icon {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(37, 99, 235, 0.15);
+  color: var(--accent);
+  font-size: 13px;
+  transition: background-color var(--transition), color var(--transition), box-shadow var(--transition);
+}
+
+.np-contact-list li:hover .np-contact-icon {
+  background-color: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.45);
+}
+
+.np-contact-label {
+  display: block;
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 2px;
+}
+
+.np-contact-value {
+  display: block;
+  font-size: 14px;
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* ---------------------------------------------------------------
+   BOTTOM BAR
+---------------------------------------------------------------- */
+.np-footer-bottom {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 26px;
+  border-top: 1px solid var(--border);
+}
+
+.np-copyright,
+.np-madewith {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.np-heart {
+  display: inline-block;
+  animation: np-heartbeat 1.6s ease-in-out infinite;
+}
+
+@keyframes np-heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.np-bottom-links {
+  display: flex;
+  gap: 22px;
+}
+
+.np-bottom-links .np-link {
+  font-size: 13px;
+}
+
+/* =====================================================================
+   RESPONSIVE
+====================================================================== */
+@media (max-width: 1100px) {
+  .np-footer-top {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .np-col-about {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .np-footer {
+    padding: 50px 6% 24px;
+  }
+
+  .np-footer-top {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .np-col-about {
+    grid-column: auto;
+  }
+
+  .np-footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .np-bottom-links {
+    justify-content: center;
+  }
+}

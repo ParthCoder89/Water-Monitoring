@@ -1,0 +1,871 @@
+/* =====================================================================
+   ABOUT DEVICE PAGE STYLES — NeerPilot (REDESIGNED — Tab System)
+   Theme:
+     Background   : #212121
+     Cards        : #2A2A2A
+     Primary Blue : #0EA5E9
+     Text         : #ECECEC
+     Secondary    : #A0A0A0
+   Modular, reusable classes. Mobile-first. No inline CSS.
+   NOTE: Only this .about-device block was redesigned. Navbar and
+   footer styles are untouched and should remain in your existing
+   navbar.css / footer.css files.
+====================================================================== */
+
+/* ---------------------------------------------------------------
+   ROOT VARIABLES
+---------------------------------------------------------------- */
+.about-device {
+  --bg: #212121;
+  --card: #2A2A2A;
+  --primary: #0EA5E9;
+  --primary-dark: #0284C7;
+  --text: #ECECEC;
+  --text-secondary: #A0A0A0;
+  --radius-sm: 14px;
+  --radius-lg: 18px;
+  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.35);
+  --shadow-glow: 0 0 0 1px rgba(14, 165, 233, 0.25), 0 8px 24px rgba(14, 165, 233, 0.15);
+  --transition: 0.3s ease;
+
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  color: var(--text);
+  background-color: var(--bg);
+  padding: 32px 4%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.about-device * {
+  box-sizing: border-box;
+}
+
+.about-device img {
+  max-width: 100%;
+  display: block;
+  border-radius: var(--radius-sm);
+}
+
+/* ---------------------------------------------------------------
+   SCROLL REVEAL (JS toggles .visible)
+---------------------------------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------------------------------------------------------------
+   SHARED TEXT / EYEBROW
+---------------------------------------------------------------- */
+.ad-header {
+  text-align: center;
+  padding: 20px 0 10px;
+}
+
+.ad-title {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  background: linear-gradient(90deg, #ffffff, var(--primary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.ad-subtitle {
+  max-width: 680px;
+  margin: 0 auto;
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.ad-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary);
+  background: rgba(14, 165, 233, 0.12);
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+}
+
+.ad-section-title {
+  font-size: clamp(22px, 3.5vw, 30px);
+  font-weight: 600;
+  margin: 0 0 14px 0;
+  color: var(--text);
+}
+
+.ad-section-desc {
+  color: var(--text-secondary);
+  max-width: 720px;
+  font-size: 15px;
+  line-height: 1.75;
+  margin-bottom: 30px;
+}
+
+/* ---------------------------------------------------------------
+   BUTTONS
+---------------------------------------------------------------- */
+.ad-btn {
+  display: inline-block;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 24px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition);
+}
+
+.ad-btn-primary {
+  background-color: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(14, 165, 233, 0.3);
+}
+
+.ad-btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(14, 165, 233, 0.4);
+}
+
+.ad-btn-secondary {
+  background-color: transparent;
+  color: var(--primary);
+  border: 1.5px solid var(--primary);
+}
+
+.ad-btn-secondary:hover {
+  background-color: var(--primary);
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(14, 165, 233, 0.3);
+}
+
+/* ---------------------------------------------------------------
+   ALWAYS-VISIBLE INTRO CARDS (alternating overview)
+---------------------------------------------------------------- */
+.ad-intro-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 44px;
+  align-items: center;
+  margin: 40px 0 50px;
+}
+
+.ad-intro-card:last-child {
+  margin-bottom: 0;
+}
+
+.ad-intro-card.ad-reverse .ad-intro-image {
+  order: 2;
+}
+
+.ad-intro-card.ad-reverse .ad-intro-text {
+  order: 1;
+}
+
+.ad-intro-image img {
+  width: 100%;
+  box-shadow: var(--shadow-glass);
+  transition: transform var(--transition);
+}
+
+.ad-intro-image img:hover {
+  transform: translateY(-4px) scale(1.01);
+}
+
+.ad-intro-text h2,
+.ad-intro-text h3 {
+  font-size: 24px;
+  margin: 0 0 12px 0;
+  color: var(--text);
+}
+
+.ad-intro-text p {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin: 0 0 20px 0;
+}
+
+/* ---------------------------------------------------------------
+   STICKY TAB NAVIGATION
+---------------------------------------------------------------- */
+.ad-tabnav {
+  position: sticky;
+  top: 12px;
+  z-index: 60;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: center;
+  background: rgba(42, 42, 42, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  padding: 6px;
+  margin: 10px 0 40px;
+  box-shadow: var(--shadow-glass);
+}
+
+.ad-tab {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color var(--transition);
+  white-space: nowrap;
+}
+
+.ad-tab i {
+  font-size: 13px;
+}
+
+.ad-tab.ad-tab-active {
+  color: #ffffff;
+}
+
+/* Sliding glow pill behind the active tab (positioned via JS) */
+.ad-tab-glow {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  height: calc(100% - 12px);
+  width: 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--primary), #38BDF8);
+  box-shadow: 0 0 18px rgba(14, 165, 233, 0.55);
+  transition: transform 0.35s ease, width 0.35s ease;
+  z-index: 1;
+}
+
+/* ---------------------------------------------------------------
+   TAB PANELS (only the active one is shown)
+---------------------------------------------------------------- */
+.ad-panel {
+  display: none;
+  margin-top: 90px;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.ad-panel.ad-panel-active {
+  display: block;
+}
+
+.ad-panel.ad-panel-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ad-block {
+  padding: 46px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.ad-block:first-of-type {
+  border-top: none;
+}
+
+.ad-block-title {
+  font-size: clamp(19px, 3vw, 24px);
+  margin-bottom: 24px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.ad-block-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--primary), #38BDF8);
+}
+
+/* ---------------------------------------------------------------
+   OVERVIEW PANEL — media + block diagram + compact cards
+---------------------------------------------------------------- */
+.ad-overview-media {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 34px;
+}
+
+.ad-overview-figure {
+  margin: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-glass);
+}
+
+.ad-overview-figure img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+}
+
+.ad-overview-figure figcaption {
+  padding: 10px 4px 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.ad-block-diagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  background-color: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-lg);
+  padding: 30px 20px;
+  margin-bottom: 40px;
+  box-shadow: var(--shadow-glass);
+}
+
+.ad-block-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: rgba(14, 165, 233, 0.1);
+  border: 1px solid rgba(14, 165, 233, 0.3);
+  border-radius: var(--radius-sm);
+  padding: 18px 24px;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 500;
+  min-width: 110px;
+  text-align: center;
+}
+
+.ad-block-node i {
+  font-size: 20px;
+  color: var(--primary);
+}
+
+.ad-block-node-cloud {
+  background: rgba(56, 189, 248, 0.12);
+  border-color: rgba(56, 189, 248, 0.35);
+}
+
+.ad-block-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--primary);
+  font-size: 18px;
+}
+
+.ad-block-arrow small {
+  font-size: 10px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.ad-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.ad-overview-card {
+  background-color: var(--card);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-glass);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.ad-overview-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-glow), 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+.ad-overview-icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.ad-overview-card h3 {
+  font-size: 18px;
+  margin: 0 0 8px 0;
+}
+
+.ad-overview-card p {
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+/* ---------------------------------------------------------------
+   HERO IMAGE (large image inside Tank / Home panels)
+---------------------------------------------------------------- */
+.ad-hero-image {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-glass);
+  margin-bottom: 30px;
+}
+
+.ad-hero-image img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  transition: transform 0.5s ease;
+}
+
+.ad-hero-image:hover img {
+  transform: scale(1.02);
+}
+
+/* ---------------------------------------------------------------
+   NOTICE BOX (wire sensor clarification)
+---------------------------------------------------------------- */
+.ad-notice {
+  background-color: rgba(14, 165, 233, 0.08);
+  border: 1px solid rgba(14, 165, 233, 0.3);
+  border-left: 4px solid var(--primary);
+  border-radius: var(--radius-sm);
+  padding: 18px 22px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.ad-notice strong {
+  color: var(--primary);
+}
+
+/* ---------------------------------------------------------------
+   COMPONENT IMAGES (Tank / Home component figure grid)
+---------------------------------------------------------------- */
+.ad-component-images {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.ad-component-figure {
+  margin: 0;
+  background-color: var(--card);
+  border-radius: var(--radius-sm);
+  padding: 10px;
+  text-align: center;
+  box-shadow: var(--shadow-glass);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.ad-component-figure:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-glow);
+}
+
+.ad-component-figure img {
+  border-radius: 10px;
+  margin-bottom: 8px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.ad-component-figure figcaption {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* ---------------------------------------------------------------
+   CARD GRIDS (features / advantages)
+---------------------------------------------------------------- */
+.ad-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.ad-card-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.ad-feature-card,
+.ad-advantage-card {
+  background-color: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-lg);
+  padding: 22px 20px;
+  box-shadow: var(--shadow-glass);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.ad-feature-card:hover,
+.ad-advantage-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-glow);
+  border-color: rgba(14, 165, 233, 0.35);
+}
+
+.ad-icon-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(14, 165, 233, 0.12);
+  color: var(--primary);
+  font-size: 17px;
+  margin-bottom: 12px;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.ad-feature-card:hover .ad-icon-circle {
+  background: linear-gradient(90deg, var(--primary), #38BDF8);
+  color: #0b0b0b;
+}
+
+.ad-feature-card h4 {
+  font-size: 15px;
+  margin: 0 0 6px 0;
+}
+
+.ad-feature-card p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.ad-advantage-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.ad-advantage-card i {
+  color: var(--primary);
+  font-size: 15px;
+  margin-top: 2px;
+}
+
+.ad-advantage-card p {
+  font-size: 13px;
+  color: var(--text);
+  margin: 0;
+}
+
+/* ---------------------------------------------------------------
+   TIMELINE (Working of Tank Unit)
+---------------------------------------------------------------- */
+.ad-timeline {
+  position: relative;
+  padding-left: 30px;
+}
+
+.ad-timeline::before {
+  content: "";
+  position: absolute;
+  left: 9px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--primary), rgba(14, 165, 233, 0.1));
+}
+
+.ad-timeline-step {
+  position: relative;
+  padding-left: 30px;
+  padding-bottom: 30px;
+}
+
+.ad-timeline-step:last-child {
+  padding-bottom: 0;
+}
+
+.ad-timeline-dot {
+  position: absolute;
+  left: -30px;
+  top: 4px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.15);
+}
+
+.ad-timeline-content {
+  background-color: var(--card);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  box-shadow: var(--shadow-glass);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.ad-timeline-content:hover {
+  transform: translateX(6px);
+  box-shadow: var(--shadow-glow);
+}
+
+.ad-timeline-content h4 {
+  font-size: 15px;
+  margin: 0 0 6px 0;
+}
+
+.ad-timeline-content p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* ---------------------------------------------------------------
+   FLOW DIAGRAM (Working of Home Unit)
+---------------------------------------------------------------- */
+.ad-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.ad-flow-step span {
+  display: inline-block;
+  background-color: var(--card);
+  color: var(--text);
+  border-radius: var(--radius-sm);
+  padding: 14px 26px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: var(--shadow-glass);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.ad-flow-step span:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-glow);
+}
+
+.ad-flow-arrow {
+  color: var(--primary);
+  font-size: 20px;
+  line-height: 1;
+}
+
+/* ---------------------------------------------------------------
+   COMPARISON TABLE
+---------------------------------------------------------------- */
+.ad-comparison-media {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.ad-comparison-media img {
+  width: 100%;
+  box-shadow: var(--shadow-glass);
+}
+
+.ad-table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-glass);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ad-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 620px;
+  background-color: var(--card);
+}
+
+.ad-table th,
+.ad-table td {
+  text-align: left;
+  padding: 16px 20px;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.ad-table th {
+  background-color: rgba(14, 165, 233, 0.12);
+  color: var(--primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+}
+
+.ad-table td {
+  color: var(--text-secondary);
+}
+
+.ad-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* ---------------------------------------------------------------
+   IMAGE GALLERY
+---------------------------------------------------------------- */
+.ad-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.ad-gallery-item {
+  margin: 0;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background-color: var(--card);
+  box-shadow: var(--shadow-glass);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.ad-gallery-item:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: var(--shadow-glow);
+}
+
+.ad-gallery-item img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 0;
+  transition: transform 0.4s ease;
+}
+
+.ad-gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+.ad-gallery-item figcaption {
+  padding: 10px 14px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* =====================================================================
+   RESPONSIVE
+====================================================================== */
+@media (max-width: 991px) {
+  .ad-intro-card {
+    grid-template-columns: 1fr;
+  }
+
+  .ad-intro-card.ad-reverse .ad-intro-image {
+    order: -1;
+  }
+
+  .ad-intro-card.ad-reverse .ad-intro-text {
+    order: 0;
+  }
+
+  .ad-overview-media,
+  .ad-overview-grid,
+  .ad-comparison-media {
+    grid-template-columns: 1fr;
+  }
+
+  .ad-component-images {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .ad-card-grid,
+  .ad-card-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ad-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .about-device {
+    padding: 24px 5%;
+  }
+
+  .ad-tabnav {
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: var(--radius-lg);
+  }
+
+  .ad-tab span {
+    display: none;
+  }
+
+  .ad-tab {
+    padding: 10px 14px;
+  }
+
+  .ad-block-diagram {
+    flex-direction: column;
+  }
+
+  .ad-block-arrow {
+    transform: rotate(90deg);
+  }
+
+  .ad-component-images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ad-card-grid,
+  .ad-card-grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .ad-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .ad-table {
+    min-width: 520px;
+  }
+}
